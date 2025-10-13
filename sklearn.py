@@ -1,9 +1,6 @@
-
-
-#print(df.groupby["Age"].head())
-# this is a panda program
-# print(df.groupby)
+import sklearn as sk
 import pandas as pd
+#from sklearn.model_selection import train_test_split
 
 # Load the dataset
 df = pd.read_csv("/Users/akshay/Advait/AceCoding/ACECoding_ML/train.csv")
@@ -16,15 +13,9 @@ ageorder = df.sort_values(by="Age", ascending=True)
 
 # Print the first 10 rows of the new DataFrame
 
-#median = df.median(numeric_only=True)
-#mode = df.mode(numeric_only=True).iloc[0]  # Take the first row for mode
-
 # Print the results
 print("Mean Age:\n", mean)
 print("\nClass 3:\n", class3)
 print("First 10 rows of the sorted DataFrame:\n", ageorder.head(10))
-#print("\nMedian:\n", median)
-#print("\nMode:\n", mode)
-#git config --global user.name "Antov225"
-#git config --global user.email "ab6123@pleasantonusd.net"
 print("Dimensions of the DataFrame:", df.shape)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25)
